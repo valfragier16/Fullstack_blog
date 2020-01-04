@@ -1,0 +1,12 @@
+.img{
+
+    float: left;
+    overflow: hidden;
+    border-radius: 50px;
+    display: block;
+}
+
+.mat-button {
+    float: right;
+}
+

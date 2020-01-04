@@ -16,6 +16,12 @@ import { AddPostComponent } from './add-post/add-post.component';
 
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { HttpClientInterceptor } from './http-client-interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule,
+  MatIconModule,
+  MatCardModule,
+  MatButtonModule,
+  MatProgressSpinnerModule } from '@angular/material';
 
 
 
@@ -34,6 +40,11 @@ import { HttpClientInterceptor } from './http-client-interceptor';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
+    MatButtonModule,
+    MatProgressSpinnerModule,
     FroalaEditorModule.forRoot(), 
     FroalaViewModule.forRoot(),
     NgxWebstorageModule.forRoot(),
@@ -44,7 +55,8 @@ import { HttpClientInterceptor } from './http-client-interceptor';
       {path: 'home', component: HomeComponent},
       {path: 'add-post', component: AddPostComponent},
     ]),
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
 
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true}],
