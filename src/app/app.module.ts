@@ -22,6 +22,8 @@ import { MatToolbarModule,
   MatCardModule,
   MatButtonModule,
   MatProgressSpinnerModule } from '@angular/material';
+import { PostComponent } from './post/post.component';
+import { AuthGuard } from './auth.guard';
 
 
 
@@ -33,7 +35,8 @@ import { MatToolbarModule,
     LoginComponent,
     RegisterSuccessComponent,
     HomeComponent,
-    AddPostComponent
+    AddPostComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -49,11 +52,14 @@ import { MatToolbarModule,
     FroalaViewModule.forRoot(),
     NgxWebstorageModule.forRoot(),
     RouterModule.forRoot([
+      {path: '', component: HomeComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'login', component: LoginComponent},
       {path: 'register-success', component: RegisterSuccessComponent},
       {path: 'home', component: HomeComponent},
-      {path: 'add-post', component: AddPostComponent},
+      {path: 'add-post', component: AddPostComponent, canActivate: [AuthGuard]},
+      {path: 'post/:id', component: PostComponent},
+
     ]),
     HttpClientModule,
     BrowserAnimationsModule

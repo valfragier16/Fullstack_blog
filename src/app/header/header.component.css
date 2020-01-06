@@ -9,17 +9,22 @@
     text-decoration: none;
 }
 
-.login, .register{
-    float: right;
-    color: aliceblue;
-    margin-top: 38px;
-    font-family: 'Quicksand', sans-serif;
-}
-
-.new-post{
+.login,.register{
     float: right;
     text-decoration: none;
     color: aliceblue;
-    margin-top: 45px;
+    padding-top: 10px;
     font-family: 'Quicksand', sans-serif;
-}
+  }
+  
+  .logout,.new-post{
+    float: right;
+    color: aliceblue;
+    padding-top: 10px;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  .logout:hover, .new-post:hover{
+    color: blueviolet;
+    text-decoration: none;
+  }

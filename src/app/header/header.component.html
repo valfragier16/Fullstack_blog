@@ -5,12 +5,12 @@
           <h1><a href="" class="title"> <img src="assets/img/output-onlinepngtools.png" height="120px" width="120px">Social Stream</a></h1>
         </div> <!-- Title -->
 
-        <div class="col-md-2" *ngIf="authService.isAuthenticated()">
+        <div class="col-md-3" *ngIf="authService.isAuthenticated()">
           <a href="/add-post" class="new-post">Add Post</a>
+          <button href="login" class="logout btn btn-default" (click)="logout()">Log Out</button>
         </div>
 
-        <div class="col-md-4">
-          <a href="home" class="login btn btn-default">Home</a>
+        <div class="col-md-3" *ngIf="!authService.isAuthenticated()">
           <a href="login" class="login btn btn-default">Login</a>
           <a href="register" class="register btn btn-default">Register</a>
         </div> <!-- Login and Register -->
